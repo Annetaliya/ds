@@ -1,5 +1,9 @@
-const array = [6, 8, 9, 4];
+const array = [6, 8, 9, 4, 9, 6 , 9];
 
-for (let i = 0; i <array.length; i++) {
-    console.log(array[i], i);
+
+const indices = [];
+const index = 9;
+
+while(index !== -1){
+    
 }

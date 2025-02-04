@@ -6,6 +6,11 @@
 //2 - If there a Mixture of array elements string and numbers, ignore non-numeric values
 
 //scenarion: [1, 5, "Hello", 6, , 9]
+//1) Modify your function so that it returns all occurrences of the max value if it appears multiple times:
+
+// Example:
+// input array     [3, 9, 7, 9, 5, 9, 2]
+// Expected output: { max: 9, indices: [1, 3, 5] }
 
 function findMax(array) {
     if (array.length === 0) {
@@ -24,7 +29,16 @@ function findMax(array) {
             max = array[i];
         }
     }
-    return `The Max value is ${max} Index: ${array.indexOf(max)}`;
+    let element = array.indexOf(max);
+    const occurrences = [];
+    while( element !== -1) { 
+        occurrences.push(element)
+        element = array.indexOf(max, element + 1)
+        
+    }
+
+
+    return `Max: ${max} indices: ${occurrences}`;
 
 }
-console.log(findMax([1, 5, "Hello", 6,  9]))
+console.log(findMax([3, 9, 7, 9, 5, 9, 2]))
