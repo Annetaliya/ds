@@ -29,16 +29,21 @@ function findMax(array) {
             max = array[i];
         }
     }
-    let element = array.indexOf(max);
-    const occurrences = [];
-    while( element !== -1) { 
-        occurrences.push(element)
-        element = array.indexOf(max, element + 1)
+    // let element = array.indexOf(max);
+    // const occurrences = [];
+    // while( element !== -1) { 
+    //     occurrences.push(element)
+    //     element = array.indexOf(max, element + 1)
         
-    }
+    // }
+    const occured = array.map((item, index) => {
+        if (item === max) {
+            return index
+        }
+    }).filter((item) => item !== undefined)
 
 
-    return `Max: ${max} indices: ${occurrences}`;
+    return `Max: ${max} indices: ${occured}`;
 
 }
 console.log(findMax([3, 9, 7, 9, 5, 9, 2]))
