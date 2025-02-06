@@ -11,39 +11,38 @@
 // Example:
 // input array     [3, 9, 7, 9, 5, 9, 2]
 // Expected output: { max: 9, indices: [1, 3, 5] }
+//Sample input:   [3, 9, 7, 9, 5, 9, 2]  
+
+//Output:  { 3: 1, 9: 3, 7: 1, 5: 1, 2: 1 }
 
 function findMax(array) {
-    if (array.length === 0) {
-        return null
-    }
+
     if (!Array.isArray(array)) {
         return 'Invalid Input';
     }
+    if (array.length === 0) {
+        return null
+    }
     
-    let max = array[0];
-    for (let i = 1; i < array.length; i++) {
+    const countMap = {};
+    let count = 0;
+    
+
+    for (let i = 0; i < array.length; i++) {
         if (typeof array[i] !== "number") {
             continue;
         }
-        if (array[i] > max) {
-            max = array[i];
+        if (countMap[array[i]]) {
+            countMap[array[i]] += 1;          
+        } else {
+            countMap[array[i]] = 1;
         }
-    }
-    // let element = array.indexOf(max);
-    // const occurrences = [];
-    // while( element !== -1) { 
-    //     occurrences.push(element)
-    //     element = array.indexOf(max, element + 1)
         
-    // }
-    const occured = array.map((item, index) => {
-        if (item === max) {
-            return index
-        }
-    }).filter((item) => item !== undefined)
-
-
-    return `Max: ${max} indices: ${occured}`;
+    }
+    
+    
+    return countMap;
 
 }
 console.log(findMax([3, 9, 7, 9, 5, 9, 2]))
+// 3 : 1, 9: 3
