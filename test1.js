@@ -29,7 +29,7 @@ function highCount(array) {
     for (let key in obj) {
         if (obj[key] === max) {
             newArray.push(key)
-            
+           return `{${[...newArray]} count ${obj[key]}}`
         }
     }
     console.log(newArray)
