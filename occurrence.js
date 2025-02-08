@@ -24,10 +24,14 @@ function frequent(array) {
     for (let key in occurence) {
         if (occurence.hasOwnProperty(key)) {
             values.push(occurence[key])
-        }
+        }   
     }
     const maximum = Math.max(...values)
-    console.log(maximum)
+    for (let key in occurence) {
+        if (occurence[key] === maximum) {
+            return `${key} ${maximum} times`
+        }   
+    }
     return occurence;
 }
 console.log(frequent([3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3]))
