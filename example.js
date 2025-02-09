@@ -24,3 +24,13 @@ function outcome(items) {
 
 console.log(outcome([3, 9, 7, 9, 5, 9, 2]))
 
+const newItems= [3, 9, 7, 9, 5, 9, 2]
+const result = newItems.map((item, index) => {
+   if (typeof item === 'string') {
+    return item.toLowerCase()
+   } else {
+    return item
+   }
+   
+})
+console.log(result)
