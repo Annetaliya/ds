@@ -31,7 +31,9 @@ function rename() {
     const array = [{ name: 'Spider-Man' }, { name: 'Thor' }, 
         { name: 'Black Panther' }, { name: 'Captain Marvel' }, { name: 'Silver Surfer' }]
     const superhero = array.map((element, index) => {
-        return {id: index, hero: element.name, ...element}
+        element.hero = element.name
+        delete element.name
+        return {id: index, ...element}
     })
     return superhero
 }
