@@ -26,10 +26,17 @@ function frequent(array) {
             values.push(occurence[key])
         }   
     }
-    const maximum = Math.max(...values)
+    let maxVal = values[0]
+
+    for (let i= 1; i < values.length; i++) {
+        if (values[i] > maxVal) {
+            maxVal = values[i]
+        }
+    }
+
     for (let key in occurence) {
-        if (occurence[key] === maximum) {
-            return `${key} ${maximum} times`
+        if (occurence[key] === maxVal) {
+            return `${key} ${maxVal} times`
         }   
     }
     return occurence;
