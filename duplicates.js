@@ -21,8 +21,9 @@ function removeDuplicates (array) {
     })
     // let filtered = new Set(result)
     // return [...filtered]
-    for (let i = 0; i < result.length; i++) {
-        if(result[i] === result[i + 1]) {
+    let compare = result[0]
+    for (let i = 1; i < result.length; i++) {
+        if(result[i] !== compare) {
             removed.push(result[i])
         }
     }
