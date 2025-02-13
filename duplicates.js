@@ -5,7 +5,6 @@
 //Out put: [1, 2, 4, 8, 5]
 
 function removeDuplicates (array) {
-    const removed = [];
     if (array.length === 0) {
         return null;
     }
@@ -21,12 +20,13 @@ function removeDuplicates (array) {
     })
     // let filtered = new Set(result)
     // return [...filtered]
-    let compare = result[0]
-    for (let i = 1; i < result.length; i++) {
-        if(result[i] !== compare) {
-            removed.push(result[i])
-        }
-    }
+
+   const removed = result.filter((item, index) => result.indexOf(item) === index)
+    // for (let i = 0; i < result.length; i++) {
+    //     if(result[i] === result[i + 1]) {
+    //       removed.push(result[i])
+    //     }
+    // }
     return removed;
 
  }
@@ -34,4 +34,4 @@ function removeDuplicates (array) {
  
 
 
-console.log(removeDuplicates(['a', 'b', 'd', 'A', 'c', 'e']))
+console.log(removeDuplicates(['a', 'b','b', 'd', 'A', 'c', 'e']))

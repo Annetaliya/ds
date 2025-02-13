@@ -6,16 +6,23 @@
 // output:  'tHE nEW bOOK'.
 
 function swapCharacter(str) {
-    let result = ''
+    if (str === null) {
+        return null;
+    }
+    if (typeof str !== 'string') {
+        return 'Invalid Input'
+    }
+    let result = []
+    str.split(' ')
     for (i = 0; i < str.length; i++) {
-        if (str[i] === str[i].toLowerCase()){
-            result += str[i].toUpperCase()
+        if (str.charAt(i) === str.charAt(i).toLowerCase()){
+            result.push(str.charAt(i).toUpperCase())
         } else {
-            result += str[i].toLowerCase()
+            result.push(str.charAt(i).toLowerCase())
         }
         }
       
-    return result
+    return result.join('')
     
 }
 console.log(swapCharacter('The New Book'));
