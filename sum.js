@@ -16,10 +16,12 @@ function findSum(array) {
     }
     let sum = 0;
     for (let i = 0; i < array.length; i++) {
-        if (typeof array[i] !== 'number') {
-            continue
+        if (typeof array[i] === 'number') {
+            sum += array[i];
+        } else {
+            continue;
         }
-        sum += array[i]
+        
     }
     return sum;
 }

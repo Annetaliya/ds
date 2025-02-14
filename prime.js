@@ -14,15 +14,21 @@ function findPrime(array) {
     if (!Array.isArray(array)) {
         return 'Invalid Input'
     }
-    let isPrime = []
-    
-    for (let i = 0; i < array.length; i++) {
-        if (array[i] % array[i] === 0) {
-            isPrime.push(array[i])
+    function primeNumber(num) {
+        for (let i = 2; num > i; i++) {
+            if (num % i === 0) {
+                return false
+
+             }
+        
+
         }
+        return num;
     }
-    return isPrime
+    const result = array.every(primeNumber)
+    return result;
+    
   
    
 }
-console.log(findPrime([2, 3, 6, 9, 7]))
+console.log(findPrime([2,3,5,7,8]))

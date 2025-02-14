@@ -10,8 +10,22 @@ function combineArray (firstArray, secondArray) {
     if (!Array.isArray(firstArray) && !Array.isArray(secondArray)){
         return 'Invalid Input'
     }
-    const newArray = [...firstArray, ...secondArray];
-    const uniqueArray = newArray.filter((item, index) =>  newArray.indexOf(item) === index);
-    return uniqueArray;
+    const newArray = firstArray.concat(secondArray);
+    let filtered =  [];
+    for ( let i = 0; i < newArray.length; i++){
+        for ( let j = i + 1; j < newArray.length; j++) {
+            if (newArray[i] !== newArray[j]) {
+                if (!filtered.includes(newArray[i])) {
+                    filtered.push(newArray[i])
+                }
+            }
+        }
+    }
+
+
+    return filtered;
+    
+    
 }
-console.log(combineArray([1, 2, 3], [100, 2, 1, 10]))
+
+console.log(combineArray([1, 2, 3, 4], [100, 2, 1, 7, 4]))

@@ -6,13 +6,13 @@
 // output:  'tHE nEW bOOK'.
 
 function swapCharacter(str) {
-    if (str === null) {
+    if (str === null || str === '') {
         return null;
     }
     if (typeof str !== 'string') {
         return 'Invalid Input'
     }
-    let result = []
+    let result = [];
     str.split(' ')
     for (i = 0; i < str.length; i++) {
         if (str.charAt(i) === str.charAt(i).toLowerCase()){
