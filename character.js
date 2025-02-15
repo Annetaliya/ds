@@ -11,21 +11,16 @@ function countCharacter(str) {
         return 'Invalid Input'
     }
     // const newArray = str.split('')
-    let count = 0;
+    const pattern = /^[A-Za-z]+$/;
+    let newArray = [];
     for (let i = 0; i < str.length; i++){
-        if (typeof str.charAt[i] !== 'number') {
-            count++;
-            
-            
-        } else {
-            continue
+        if (str[i].match(pattern)) {
+            newArray.push(str[i])
+        } 
         }
+        return newArray.length;
 
     }
-    // console.log(newArray)
-    // console.log(typeof newArray[newArray.length - 1])
-   
-    return count;
     
-}
+    
 console.log(countCharacter('ghsak45'))
