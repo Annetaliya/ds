@@ -22,10 +22,8 @@ function combineArray (firstArray, secondArray) {
         }
     }
 
-
     return filtered;
-    
-    
+        
 }
 
 console.log(combineArray([1, 2, 3, 4], [100, 2, 1, 7, 4]))

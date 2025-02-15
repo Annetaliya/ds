@@ -1,17 +1,27 @@
-function removeCharacter(array) {
-    array.split(" ");
-    let newArray = [];
-    for ( let i = 0; i < array.length; i++){
-        for ( let j = i + 1; j < array.length; j++) {
-            if (array.charAt(i) !== array.charAt(j)) {
-                if (!newArray.includes(array.charAt(i))) {
-                    newArray.push(array.charAt(i))
-                }
-            }
-        }
+// Remove all Occurrences of a Character in a JS String
+//       Test Data:
+//        input: "Annet space"
+//        output: "Annt spac"
+//    letter 'e' removed.
+
+function removeCharacter(str, item) {
+    if (str === '') {
+        return null
+    }
+    if (typeof str !== 'string') {
+        return 'Invalid Input'
+    }
+    let newStr = '';
+    for (let i = 0; i < str.length; i++) {
+        if (str.charAt(i) === item) {
+            continue;
+        } else {
+            newStr += str.charAt(i)
+
+        } 
     }
    
-    return newArray.join('')
+    return newStr;
   
 }
-  console.log(removeCharacter("Annet space"));
+  console.log(removeCharacter("Annet space", 'e'));
