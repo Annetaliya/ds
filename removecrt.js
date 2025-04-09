@@ -24,4 +24,16 @@ function removeCharacter(str, item) {
     return newStr;
   
 }
-  console.log(removeCharacter("Annet space", 'e'));
+
+function removeChrt(str, element) {
+    let newStr = '';
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === element) {
+            continue;
+        } else {
+            newStr += str[i]
+        }
+    }
+    return newStr;
+}
+  console.log(removeChrt("Annet space", 'e'));
