@@ -27,22 +27,22 @@ function combineArray (firstArray, secondArray) {
 }
 
 function combine(array1, array2) {
-    const newArray = [...array1, ...array2]
-
-    // const filtered = newArray.filter((item, index)=> newArray.indexOf(item) === index)
-    // return filtered;
-
+    const newArray = [...array1, ...array2];
+    //const filtered = newArray.filter((item, index) => newArray.indexOf(item) === index)
     let filtered = [];
+
     for (let i = 0; i < newArray.length; i++) {
-        for (let j = i + 1; j < newArray.length; j++) {
+        for (let j = i + 1; j < newArray.length; i++) {
             if (newArray[i] !== newArray[j]) {
-                if (!filtered.includes(newArray[i])){
+                if (!filtered.includes(newArray[i])) {
                     filtered.push(newArray[i])
                 }
             }
         }
     }
-    return filtered
+    return filtered;
+
+ 
 }
 
 console.log(combine([1, 2, 3, 4], [100, 2, 1, 7, 4]))
