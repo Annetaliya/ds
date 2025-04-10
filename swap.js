@@ -25,5 +25,18 @@ function swapCharacter(str) {
     return result.join('')
     
 }
-console.log(swapCharacter('The New Book'));
+
+function swapCrt(str) {
+    let newStr = '';
+
+    for (let i = 0; i < str.length; i++ ){
+        if (str[i] === str[i].toUpperCase()) {
+            newStr += str[i].toLowerCase()
+        } else {
+            newStr += str[i].toUpperCase()
+        }
+    }
+    return newStr;
+}
+console.log(swapCrt('The New Book'));
 
